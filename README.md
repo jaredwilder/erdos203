@@ -1,4 +1,4 @@
-# Erdős–Graham Problem #203 — coset-cover attack corpus
+# Erdős–Graham Problem #203 - coset-cover attack corpus
 
 **STATUS: OPEN.** This repository tracks exact structural results, replayed finite
 computations, and reproducible search engines for
@@ -10,7 +10,7 @@ computations, and reproducible search engines for
 Nothing in this repository claims the problem is closed. The branch studied here is
 the **finite prime-fibre cover** architecture: a finite set of primes P together with
 a phase assignment whose fibres cover every exponent pair (k,ℓ) would, via CRT, produce
-a witness m. That is a *sufficient* certificate shape — it is **not** assumed equivalent
+a witness m. That is a *sufficient* certificate shape - it is **not** assumed equivalent
 to the full problem (an m whose divisor set is infinite is not ruled out by anything
 here; see `docs/QUARANTINE.md`).
 
@@ -19,7 +19,7 @@ here; see `docs/QUARANTINE.md`).
 For a prime p > 3, let n_p = |⟨2,3⟩ mod p| and let R_p ⊂ ℤ² be the relation lattice
 {(u,v) : 2^u·3^v ≡ 1 (mod p)}. The exponent pairs killed by p form one coset of R_p of
 density 1/n_p, and the phase (which coset) is freely and independently selectable per
-prime by CRT — so cover synthesis is finite geometry first, arithmetic realization
+prime by CRT - so cover synthesis is finite geometry first, arithmetic realization
 second. The full theorem/engine ledger is [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md)
 (items EG203-G1 … G34), with session provenance in
 [`docs/provenance/`](docs/provenance/).
@@ -74,12 +74,12 @@ lake build                                # kernel gate for the (currently empty
 
 ## Discipline
 
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) — every tracked contribution is a THEOREM /
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) - every tracked contribution is a THEOREM /
   COMPUTATION / ENGINE / KILL / AUDIT with explicit family scope and axiom footprint.
-- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) — retracted or never-proved routes
+- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) - retracted or never-proved routes
   (cover=partition Fourier identity, static torsion peel, finite-cover ⟺ EG203, …)
   that must not be reused without new proof.
-- [`docs/CEGAR_PROTOCOL.md`](docs/CEGAR_PROTOCOL.md) — the exact master/adversary
+- [`docs/CEGAR_PROTOCOL.md`](docs/CEGAR_PROTOCOL.md) - the exact master/adversary
   search loop and what its two UNSAT outcomes do and do not certify.
 
 ## Sibling repositories
@@ -94,7 +94,7 @@ lake build                                # kernel gate for the (currently empty
 
 - P. Erdős and R. L. Graham, *Old and new problems and results in combinatorial
   number theory*, Monographies de L'Enseignement Mathématique 28 (1980).
-- [erdosproblems.com/203](https://www.erdosproblems.com/203) — problem page.
+- [erdosproblems.com/203](https://www.erdosproblems.com/203) - problem page.
 - Research context: [epassports.eu/research/erdos-graham-203](https://epassports.eu/research/erdos-graham-203).
 
 ## License

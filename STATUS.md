@@ -8,7 +8,7 @@
   exact N=5040 pool kill, four-fibre overlap tax. Ledger: `CANONICAL_GOLD.md`.
 - Computational claims G28–G31: **REPLAYED on 2026-08-31** by
   `tools/replay_eg203_gold.py`, verdict `ALL_MATCH`
-  (`receipts/replay-eg203-gold-2026-08-31.json`). The G28 census is complete — the
+  (`receipts/replay-eg203-gold-2026-08-31.json`). The G28 census is complete - the
   gcd(2^5040−1, 3^5040−1) factorization fully resolved during replay.
 - Formal import status: **LEAN_GENERATED / NOT YET KERNEL-CHECKED HERE.** The Lean
   files are scaffold stubs; no theorem claim is made by their existence. Porting
