@@ -37,7 +37,7 @@ verdict `ALL_MATCH`):
 | G28 | census of primes p > 3 with n_p \| 5040 | **31 fibres**, raw mass **143/140** (complete: the gcd(2^5040−1, 3^5040−1) factorization fully resolved) |
 | G29 | the N=5040 pool cannot cover, for **any** phase assignment | p=5, p=7 fibres mandatory; joint image exactly **24**; union ≤ 143/140 − 1/24 = **823/840 < 1** |
 | G30 | {5,7,11,13} core, all **2880** phase assignments on the 60×60 torus | max union density **353/720**; unavoidable overlap tax **79/720** |
-| G31 | census p ≤ 10⁶ with n_p ≤ 1000 | **238 fibres**, raw mass ≈ **1.83048759933…**, complete by p ≤ 10⁵, largest census prime **67033** |
+| G31 | census p ≤ 10⁶ with n_p ≤ 1000 | **238 fibres**, raw mass ≈ **1.83048759933…**; all 238 already occur below **10⁵** (none are added for 10⁵ < p ≤ 10⁶); largest census prime **67033** |
 
 G29 is a theorem, not a failed search: the first common-period shell whose raw mass
 exceeds 1 is *exactly impossible* by forced overlap. G30 gives a reusable
@@ -71,6 +71,10 @@ elan toolchain install $(cat lean-toolchain)
 lake exe cache get
 lake build                                # kernel gate for the (currently empty) spine
 ```
+
+GitHub Actions runs the Lean scaffold build and both arithmetic replay checks on pushes
+and pull requests. The checked-in JSON receipt remains the frozen release record; CI
+recomputes the claims from source rather than trusting that file.
 
 ## Discipline
 
