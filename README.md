@@ -1,28 +1,16 @@
-# Erdős–Graham Problem #203 - coset-cover attack corpus
+# Erdős–Graham Problem #203 — finite prime-fibre obstruction calculus
 
-**STATUS: OPEN.** This repository tracks exact structural results, replayed finite
-computations, and reproducible search engines for
-[Erdős problem #203](https://www.erdosproblems.com/203):
+**Exact structural results, replayed finite computations, and a reproducible search engine for the finite prime-fibre cover architecture in Erdős–Graham #203.** The strongest current result in this branch is an exact impossibility theorem for the first common-period shell whose raw fibre mass exceeds 1.
+
+For a prime `p > 3`, the exponents killed by `p` form one coset of the relation lattice
+`R_p = {(u,v) : 2^u·3^v ≡ 1 (mod p)}`. Phase choices are independently selectable by CRT, turning this branch into a finite geometric covering problem before arithmetic realization.
+
+The source problem asks:
 
 > Is there an integer m ≥ 1 with (m,6) = 1 such that none of 2^k·3^ℓ·m + 1 are
 > prime, for any k, ℓ ≥ 0?
 
-Nothing in this repository claims the problem is closed. The branch studied here is
-the **finite prime-fibre cover** architecture: a finite set of primes P together with
-a phase assignment whose fibres cover every exponent pair (k,ℓ) would, via CRT, produce
-a witness m. That is a *sufficient* certificate shape - it is **not** assumed equivalent
-to the full problem (an m whose divisor set is infinite is not ruled out by anything
-here; see `docs/QUARANTINE.md`).
-
-## The representation
-
-For a prime p > 3, let n_p = |⟨2,3⟩ mod p| and let R_p ⊂ ℤ² be the relation lattice
-{(u,v) : 2^u·3^v ≡ 1 (mod p)}. The exponent pairs killed by p form one coset of R_p of
-density 1/n_p, and the phase (which coset) is freely and independently selectable per
-prime by CRT - so cover synthesis is finite geometry first, arithmetic realization
-second. The full theorem/engine ledger is [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md)
-(items EG203-G1 … G34), with session provenance in
-[`docs/provenance/`](docs/provenance/).
+This repository studies one sufficient certificate architecture: a finite set of prime fibres whose chosen cosets cover every exponent pair. The architecture is not assumed equivalent to the full problem; the exact branch scope is recorded in `docs/QUARANTINE.md`.
 
 ## Replayed computational results
 
@@ -39,9 +27,17 @@ verdict `ALL_MATCH`):
 | G30 | {5,7,11,13} core, all **2880** phase assignments on the 60×60 torus | max union density **353/720**; unavoidable overlap tax **79/720** |
 | G31 | census p ≤ 10⁶ with n_p ≤ 1000 | **238 fibres**, raw mass ≈ **1.83048759933…**; all 238 already occur below **10⁵** (none are added for 10⁵ < p ≤ 10⁶); largest census prime **67033** |
 
-G29 is a theorem, not a failed search: the first common-period shell whose raw mass
-exceeds 1 is *exactly impossible* by forced overlap. G30 gives a reusable
-phase-universal upper bound for any pool containing those four fibres.
+**G29 is a theorem, not a failed search:** the first common-period shell whose raw mass exceeds 1 is exactly impossible by forced overlap. G30 supplies a reusable phase-universal upper bound for any pool containing those four fibres.
+
+## The representation
+
+For a prime p > 3, let n_p = |⟨2,3⟩ mod p| and let R_p ⊂ ℤ² be the relation lattice
+{(u,v) : 2^u·3^v ≡ 1 (mod p)}. The exponent pairs killed by p form one coset of R_p of
+density 1/n_p, and the phase (which coset) is freely and independently selectable per
+prime by CRT - so cover synthesis is finite geometry first, arithmetic realization
+second. The full theorem/engine ledger is [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md)
+(items EG203-G1 … G34), with session provenance in
+[`docs/provenance/`](docs/provenance/).
 
 ## Formalization state
 
@@ -76,7 +72,7 @@ GitHub Actions runs the Lean scaffold build and both arithmetic replay checks on
 and pull requests. The checked-in JSON receipt remains the frozen release record; CI
 recomputes the claims from source rather than trusting that file.
 
-## Discipline
+## Scope and discipline
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) - every tracked contribution is a THEOREM /
   COMPUTATION / ENGINE / KILL / AUDIT with explicit family scope and axiom footprint.
@@ -84,15 +80,17 @@ recomputes the claims from source rather than trusting that file.
   (cover=partition Fourier identity, static torsion peel, finite-cover ⟺ EG203, …)
   that must not be reused without new proof.
 - [`docs/CEGAR_PROTOCOL.md`](docs/CEGAR_PROTOCOL.md) - the exact master/adversary
-  search loop and what its two UNSAT outcomes do and do not certify.
+  search loop and what its two UNSAT outcomes certify.
+
+The finite prime-fibre architecture is a sufficient certificate shape, not an equivalence to every possible #203 witness. That is the remaining boundary of this repository, not a qualification on G29/G30 themselves.
 
 ## Sibling repositories
 
 | repo | target | status |
 |---|---|---|
-| [erdos203](https://github.com/jaredwilder/erdos203) | Erdős–Graham #203 | open / active frontier (this repo) |
-| [erdos411](https://github.com/jaredwilder/erdos411) | Erdős–Graham #411 (r=2) | reduction + cascade + ω-ladder; residual gap open |
-| [erdos902](https://github.com/jaredwilder/erdos902) | Erdős #902 (Schütte) | classical bounds kernel-checked; open |
+| [erdos203](https://github.com/jaredwilder/erdos203) | Erdős–Graham #203 | finite prime-fibre obstruction frontier (this repo) |
+| [erdos411](https://github.com/jaredwilder/erdos411) | Erdős–Graham #411 (r=2) | reduction + cascade + ω-ladder |
+| [erdos902](https://github.com/jaredwilder/erdos902) | Erdős #902 (Schütte) | classical bounds and finite structure kernel-checked |
 
 ## References
 
