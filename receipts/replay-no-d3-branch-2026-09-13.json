@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-13",
+  "script": "tools/replay_no_d3_branch_2026_09_13.py",
+  "script_sha256": "1242e5203d4dc9bdfb6c69a64296260f8b1ba06237f1e7e30487a19719403d4a",
+  "execution": "independent Python replay in the publication session",
+  "scope": "r=6, d2count=1, p23 mandatory, p47 excluded, d3 absent",
+  "checks": {
+    "d6_exact_restrictions": {
+      "p8641": {"n": 4320, "H193_image": 3, "H20161_image": 6},
+      "p12097": {"n": 6048, "H193_image": 3, "H20161_image": 6}
+    },
+    "p20161_single_d6": "closed: all three d4 forced locally; max global mass 299/60480 below 899/22176",
+    "p20161_two_d6": "closed locally: remaining two tails need 19/33 but contribute at most 1/2",
+    "p193_single_d6_p8641": "unique arithmetic survivor triple {101,151,601}",
+    "p193_single_d6_p12097": "no arithmetic survivors",
+    "knife_edge_mass": "653/21600 = 1117/36960 + 1/103950",
+    "knife_edge_geometry": "uncovered density at least 8/33 by C11 x C3 x 5-primary independence",
+    "p193_two_d6": "unique arithmetic survivor pair {53,601}",
+    "two_d6_geometry": "uncovered density at least 32/143 by 3-primary x C11 x C13 x C5 independence",
+    "no_d3_no_d6_no_d8": "closed: all three d4 forced; max global mass 1819/100800 below both anchor thresholds"
+  },
+  "dependency": "combine with receipts/replay-d8-branch-2026-09-13.json for the d8-present/no-d6 subbranch",
+  "verdict": "IN_ONE_D2_NON_P47_R6_BRANCH_D3_IS_MANDATORY"
+}
