@@ -1,6 +1,6 @@
 # Erdős–Graham #203: finite prime-fibre obstruction calculus
 
-**Exact structural results, reproducible finite computations, and search code for the finite prime-fibre covering approach to Erdős–Graham #203.** The strongest result in this branch is an exact impossibility theorem for the first common-period fibre family whose total raw density exceeds 1.
+**Exact structural results, reproducible finite computations, and search code for the finite prime-fibre covering approach to Erdős–Graham #203.** The strongest fully replayed August result is an exact impossibility theorem for the first common-period fibre family whose total raw density exceeds 1. A newer September structural campaign has now closed a substantial six-fibre subbranch by equality-case partition rigidity and cardinality descent.
 
 For a prime `p>3`, the exponent pairs eliminated by `p` form one coset of the relation lattice
 
@@ -15,6 +15,22 @@ The source problem asks:
 > Is there an integer `m>=1`, `(m,6)=1`, such that none of `2^k·3^ℓ·m+1` are prime for any `k,ℓ>=0`?
 
 This repository studies one sufficient construction: a finite collection of prime fibres whose chosen cosets cover every exponent pair. That construction is not assumed to describe every possible solution of the full problem.
+
+## September 13, 2026 KBK progress
+
+The current structural release is [`docs/KBK_PROGRESS_2026-09-13.md`](docs/KBK_PROGRESS_2026-09-13.md).
+
+Headline within the frozen 31-fibre `U_5040` extension program:
+
+```text
+r <= 5 outside fibres: closed
+r = 6, d2count = 2: closed
+r = 6, d2count = 1, p=47 subbranch: closed
+```
+
+The new `p=47` closure does not come from terminal phase brute force. Local mass saturation forces the final three fibres to be the three cosets of one common index-3 kernel; that makes `p=47` redundant and descends any alleged six-fibre cover to the already-impossible five-fibre case.
+
+The September release also records two audit repairs explicitly: a corrected ternary restriction map for the `p=20161` anchor, and reopening of an earlier `d=8` compression that failed to account for multiple `d=8` fibres. New campaign claims are kept separate from the August replay bank until receipt hardening is complete.
 
 ## Exact finite results
 
@@ -41,7 +57,7 @@ n_p = |<2,3> mod p|.
 
 The relation lattice `R_p ⊂ Z²` has index `n_p`; each prime therefore eliminates one coset of density `1/n_p`. CRT controls the phase independently across primes.
 
-The full result inventory is in [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md), entries EG203-G1 through G34. Historical derivation records are in [`docs/provenance/`](docs/provenance/).
+The August theorem inventory is in [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md), entries EG203-G1 through G34. The current audited research frontier is in [`docs/KBK_PROGRESS_2026-09-13.md`](docs/KBK_PROGRESS_2026-09-13.md). Historical derivation records are in [`docs/provenance/`](docs/provenance/).
 
 ## Lean formalization status
 
@@ -78,7 +94,7 @@ GitHub Actions reruns the arithmetic computations from source rather than accept
 ## Scope and research record
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) describes how theorem, computation, program, refutation, and audit contributions are recorded.
-- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) preserves earlier routes that were retracted or never proved, including the cover=partition Fourier identity, static torsion peel, and an unsupported equivalence between finite covers and the full problem.
+- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) preserves earlier routes that were retracted or never proved, including the cover=partition Fourier identity, static torsion peel, an unsupported equivalence between finite covers and the full problem, and newly audited September live-derivation errors.
 - [`docs/CEGAR_PROTOCOL.md`](docs/CEGAR_PROTOCOL.md) describes the exact iterative search procedure and the meaning of its UNSAT outcomes.
 
 The finite prime-fibre construction is a sufficient route to a solution, not a proof that every possible #203 solution must arise that way. That is the boundary of this branch; it does not qualify G29 or G30 within their stated finite setting.
