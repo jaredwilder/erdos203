@@ -1,6 +1,6 @@
 # Erdős–Graham #203: finite prime-fibre obstruction calculus
 
-**Exact structural results, reproducible finite computations, and search code for the finite prime-fibre covering approach to Erdős–Graham #203.** The strongest fully replayed August result is an exact impossibility theorem for the first common-period fibre family whose total raw density exceeds 1. A newer September structural campaign has now closed a substantial six-fibre subbranch by equality-case partition rigidity and cardinality descent.
+**Exact structural results, reproducible finite computations, and search code for the finite prime-fibre covering approach to Erdős–Graham #203.** The strongest fully replayed August result is an exact impossibility theorem for the first common-period fibre family whose total raw density exceeds 1. A September KBK campaign has now pushed the six-fibre extension analysis substantially further.
 
 For a prime `p>3`, the exponent pairs eliminated by `p` form one coset of the relation lattice
 
@@ -18,23 +18,37 @@ This repository studies one sufficient construction: a finite collection of prim
 
 ## September 13, 2026 KBK progress
 
-The current structural release is [`docs/KBK_PROGRESS_2026-09-13.md`](docs/KBK_PROGRESS_2026-09-13.md).
+Research releases:
 
-Headline within the frozen 31-fibre `U_5040` extension program:
+- [`docs/KBK_PROGRESS_2026-09-13.md`](docs/KBK_PROGRESS_2026-09-13.md) — audited session-wide structural release and `p=47` cardinality-descent closure.
+- [`docs/KBK_ATTACK_R2_2026-09-13.md`](docs/KBK_ATTACK_R2_2026-09-13.md) — repaired complete `d=8` census and closure.
+- [`docs/KBK_ATTACK_R3_2026-09-13.md`](docs/KBK_ATTACK_R3_2026-09-13.md) — exact no-`d=3` replay; `d=3` is mandatory in the remaining one-anchor branch.
+
+Current headline within the frozen 31-fibre `U_5040` extension program:
 
 ```text
 r <= 5 outside fibres: closed
 r = 6, d2count = 2: closed
 r = 6, d2count = 1, p=47 subbranch: closed
+r = 6, d2count = 1, p=47 excluded, d3 absent: closed
 ```
 
-The new `p=47` closure does not come from terminal phase brute force. Local mass saturation forces the final three fibres to be the three cosets of one common index-3 kernel; that makes `p=47` redundant and descends any alleged six-fibre cover to the already-impossible five-fibre case.
+Thus every surviving six-fibre branch with exactly one induced-index-2 anchor must contain a `d=3` fibre.
 
-The September release also records two audit repairs explicitly: a corrected ternary restriction map for the `p=20161` anchor, and reopening of an earlier `d=8` compression that failed to account for multiple `d=8` fibres. New campaign claims are kept separate from the August replay bank until receipt hardening is complete.
+The `p=47` closure is structural rather than terminal phase brute force: local mass saturation forces the final three fibres to be the three cosets of one common index-3 kernel, making `p=47` redundant and descending any alleged six-fibre cover to the already-impossible five-fibre case.
+
+The repaired `d=8` and no-`d=3` closures are now backed by executable replays:
+
+```bash
+python tools/replay_d8_branch_2026_09_13.py
+python tools/replay_no_d3_branch_2026_09_13.py
+```
+
+with receipts in `receipts/`.
 
 ## Exact finite results
 
-All four results below are independently recomputed by [`tools/replay_eg203_gold.py`](tools/replay_eg203_gold.py), using exact rational arithmetic. The recorded output is in [`receipts/replay-eg203-gold-2026-08-31.json`](receipts/replay-eg203-gold-2026-08-31.json).
+The four August results below are independently recomputed by [`tools/replay_eg203_gold.py`](tools/replay_eg203_gold.py), using exact rational arithmetic. The recorded output is in [`receipts/replay-eg203-gold-2026-08-31.json`](receipts/replay-eg203-gold-2026-08-31.json).
 
 | id | statement | recomputed value |
 |---|---|---|
@@ -57,7 +71,7 @@ n_p = |<2,3> mod p|.
 
 The relation lattice `R_p ⊂ Z²` has index `n_p`; each prime therefore eliminates one coset of density `1/n_p`. CRT controls the phase independently across primes.
 
-The August theorem inventory is in [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md), entries EG203-G1 through G34. The current audited research frontier is in [`docs/KBK_PROGRESS_2026-09-13.md`](docs/KBK_PROGRESS_2026-09-13.md). Historical derivation records are in [`docs/provenance/`](docs/provenance/).
+The August theorem inventory is in [`CANONICAL_GOLD.md`](CANONICAL_GOLD.md), entries EG203-G1 through G34. The live status ledger is [`docs/CLAIM_LEDGER.md`](docs/CLAIM_LEDGER.md). Historical derivation records are in [`docs/provenance/`](docs/provenance/).
 
 ## Lean formalization status
 
@@ -79,6 +93,8 @@ Toolchain: `leanprover/lean4:v4.31.0-rc1`, Mathlib `master-2026-05-31`.
 ```bash
 python tools/check_gold_arithmetic.py
 python tools/replay_eg203_gold.py
+python tools/replay_d8_branch_2026_09_13.py
+python tools/replay_no_d3_branch_2026_09_13.py
 ```
 
 For the Lean project structure:
@@ -89,15 +105,15 @@ lake exe cache get
 lake build
 ```
 
-GitHub Actions reruns the arithmetic computations from source rather than accepting the checked-in JSON receipt as proof by itself.
+GitHub Actions reruns the August arithmetic computations from source rather than accepting the checked-in JSON receipt as proof by itself. The September replay scripts are checked in alongside their receipts for independent rerun.
 
 ## Scope and research record
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) describes how theorem, computation, program, refutation, and audit contributions are recorded.
-- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) preserves earlier routes that were retracted or never proved, including the cover=partition Fourier identity, static torsion peel, an unsupported equivalence between finite covers and the full problem, and newly audited September live-derivation errors.
+- [`docs/QUARANTINE.md`](docs/QUARANTINE.md) preserves earlier routes that were retracted or never proved. In particular, the original live `d=8` proof remains quarantined even though a separate corrected replay now closes that branch.
 - [`docs/CEGAR_PROTOCOL.md`](docs/CEGAR_PROTOCOL.md) describes the exact iterative search procedure and the meaning of its UNSAT outcomes.
 
-The finite prime-fibre construction is a sufficient route to a solution, not a proof that every possible #203 solution must arise that way. That is the boundary of this branch; it does not qualify G29 or G30 within their stated finite setting.
+The finite prime-fibre construction is a sufficient route to a solution, not a proof that every possible #203 solution must arise that way. That is the boundary of this branch; it does not qualify G29, G30, or the scoped September extension results.
 
 ## Sibling repositories
 
