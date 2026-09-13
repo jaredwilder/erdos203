@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-13",
+  "script": "tools/replay_d8_branch_2026_09_13.py",
+  "script_sha256": "2e3f5d84d9ff48dd0d455c41a1240208c520817a8d30c8bb63b1a9d55b76e81d",
+  "execution": "independent Python replay in the publication session",
+  "scope": "r=6, d2count=1, p23 mandatory, p47 excluded, d8 present, d3 absent, d6 absent",
+  "d8_census": [
+    {"p": 641, "n": 640, "ord2": 64, "ord3": 640, "H193_image": 8, "H20161_image": 8},
+    {"p": 769, "n": 384, "ord2": 384, "ord3": 48, "H193_image": 4, "H20161_image": 8},
+    {"p": 4481, "n": 4480, "ord2": 560, "ord3": 4480, "H193_image": 8, "H20161_image": 8},
+    {"p": 26881, "n": 13440, "ord2": 960, "ord3": 4480, "H193_image": 8, "H20161_image": 8}
+  ],
+  "checks": {
+    "d8_implies_n_divides_40320": true,
+    "gcd_factorization_verified_by_product": true,
+    "p20161_local_ceiling": "7/8 < 10/11",
+    "p193_without_p769_local_ceiling": "7/8 < 10/11",
+    "p193_with_p769_and_at_most_one_d4": "9/10 < 10/11",
+    "p193_forced_two_d4_global_max": "4013/201600 < 1117/36960"
+  },
+  "verdict": "D8_NO_D3_NO_D6_BRANCH_CLOSED"
+}
