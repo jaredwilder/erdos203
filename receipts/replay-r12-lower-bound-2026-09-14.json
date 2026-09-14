@@ -1,0 +1,89 @@
+{
+  "E_11_cheapest_orders": [
+    108,
+    162,
+    216,
+    270,
+    378,
+    486,
+    540,
+    648,
+    648,
+    648,
+    756
+  ],
+  "E_n_le_1080_count": 15,
+  "base_deficit": "221/1680",
+  "combined_low_nonE_occupancy": "53/140",
+  "corrected_signature_survivor_E_values": {
+    "10": {
+      "9": 7,
+      "10": 1
+    },
+    "11": {
+      "0": 1,
+      "9": 28,
+      "10": 7,
+      "11": 1
+    },
+    "8": {},
+    "9": {
+      "9": 1
+    }
+  },
+  "corrected_signature_survivor_counts": {
+    "10": 8,
+    "11": 37,
+    "8": 0,
+    "9": 1
+  },
+  "d11_direction_multiplicities": [
+    4,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+  ],
+  "d11_max_parallel_multiplicity": 4,
+  "e10_mass": "1189/34020",
+  "e11_mass": "617/17010",
+  "e9_mass": "2273/68040",
+  "exact_census_counts": {
+    "10": 3,
+    "11": 24,
+    "2": 2,
+    "4": 3,
+    "5": 16,
+    "7": 10,
+    "8": 4
+  },
+  "exact_low_class_occupancy_totals": {
+    "10": "5/1008",
+    "2": "53/2520",
+    "4": "19/1008",
+    "5": "53/240",
+    "7": "389/5040",
+    "8": "1/28"
+  },
+  "finite_extension_lower_bound": 12,
+  "nonE_n_le_31": [
+    [
+      23,
+      11,
+      11
+    ],
+    [
+      47,
+      23,
+      23
+    ]
+  ],
+  "r11_E9_complement_mass_threshold": "69/560",
+  "scope": "finite prime-fibre covers after adjoining U_5040; not a solution of full EG203",
+  "verdict": "ALL_MATCH"
+}
